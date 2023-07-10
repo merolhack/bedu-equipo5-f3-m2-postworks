@@ -20,9 +20,6 @@ public class Menu {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Menu class");
-        System.out.println(args.length);
-        System.out.println(args);
         new Menu();
     }
 
@@ -51,7 +48,6 @@ public class Menu {
             try {
                 option = this.sc.nextInt();
                 this.sc.nextLine();
-
                 switch (option) {
                     case 1:
                         addInterviewer();
@@ -69,6 +65,7 @@ public class Menu {
                 // throw new NoSuchElementException(e.getMessage());
             }
         }
+        this.sc.close();
         System.out.println("Programa terminado");
     }
 
@@ -84,7 +81,7 @@ public class Menu {
         sc.nextLine();
         Interviewer interviewer = new Interviewer(name, lastName, email, isActive);
         interviewer.add();
-        System.out.println(interviewer);
+        System.out.println(interviewer.toString());
     }
 
     public void searchInterviewer() {

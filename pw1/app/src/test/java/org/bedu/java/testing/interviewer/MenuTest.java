@@ -26,23 +26,23 @@ public class MenuTest {
 
     @BeforeEach
     public void setUpOutput() {
-        this.testOut = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(this.testOut));
+        testOut = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(testOut));
     }
 
     private void provideInput(String data) {
-        this.testIn = new ByteArrayInputStream(data.getBytes());
-        System.setIn(this.testIn);
+        testIn = new ByteArrayInputStream(data.getBytes());
+        System.setIn(testIn);
     }
 
     private String getOutput() {
-        return this.testOut.toString();
+        return testOut.toString();
     }
 
     @AfterEach
     public void restoreSystemInputOutput() {
-        System.setIn(this.systemIn);
-        System.setOut(this.systemOut);
+        System.setIn(systemIn);
+        System.setOut(systemOut);
     }
 
     @Test
@@ -51,12 +51,12 @@ public class MenuTest {
         final String interviewerName = "Lenin";
         final String interviewerLastName = "Meza";
         final String interviewerEmail = "merolhack@gmail.com";
-        final String addNewInterviewerCommand = "1\n" + interviewerName + "\n" + interviewerLastName + "\n" + interviewerEmail + "\n1\n3\n";
+        final String addNewInterviewerCommand = "1\n" + interviewerName + "\n" + interviewerLastName + "\n" + interviewerEmail + "\n1\n" + exitCommand;
         provideInput(addNewInterviewerCommand);
 
-        Menu myMenu = new Menu();
+        Menu.main(new String[0]);
         final String output = getOutput();
-
+        System.out.println("output: " + output);
         assertTrue(output.contains(interviewerName));
         assertTrue(output.contains(interviewerLastName));
         assertTrue(output.contains(interviewerEmail));
@@ -70,7 +70,6 @@ public class MenuTest {
         final String interviewerEmail = "merolhack@gmail.com";
         final String addNewInterviewerCommand = "1\n" + interviewerName + "\n" + interviewerLastName + "\n" + interviewerEmail + "\n1\n";
         final String getInterviewerCommand = "2\n" + interviewerEmail + "\n";
-        final String exitCommand = "3\n";
         provideInput(addNewInterviewerCommand + getInterviewerCommand + exitCommand);
 
         Menu.main(new String[0]);
