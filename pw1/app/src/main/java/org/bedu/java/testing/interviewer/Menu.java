@@ -9,7 +9,6 @@ import java.util.Scanner;
  * @author Lenin Meza
  */
 public class Menu {
-    private final String onlyNumbers = "[0-9]";
     Scanner sc;
 
     public Menu() throws Exception {
@@ -22,20 +21,6 @@ public class Menu {
     public static void main(String[] args) throws Exception {
         new Menu();
     }
-
-    public static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
-
-
 
     public void showMainMenu() throws Exception {
         int option = 0;
