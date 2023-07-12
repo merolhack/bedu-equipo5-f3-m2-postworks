@@ -8,6 +8,9 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Lenin Meza
+ */
 public class InterviewerTest {
     static String existingInterviewerName = "Lenin";
     static String existingInterviewerLastName = "Meza";
