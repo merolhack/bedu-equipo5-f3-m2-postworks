@@ -1,10 +1,10 @@
-# Sesión 1: Introduction to Testing
+# Sesión 2: Unit Testing in Java
 
 PostWork Equipo 5: Por Lenin Meza
 
 ## Proyecto
 
-Altas y consultas de entrevistadores
+Altas, bajas y consultas de entrevistadores
 
 ## Requerimientos
 
